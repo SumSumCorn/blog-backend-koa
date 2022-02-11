@@ -16,6 +16,7 @@
     "nodemon": "^2.0.15",
     "prettier": "^2.5.1"
   },
+  "type": "module",
   "scripts": {
     "start": "node src",
     "start:dev": "nodemon --watch src/ src/index.js"
