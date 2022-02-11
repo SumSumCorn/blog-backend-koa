@@ -4,8 +4,9 @@ import Router from 'koa-router';
 import bodyParser from 'koa-bodyparser';
 import mongoose from 'mongoose';
 
+// import createFakeData from './createFakeData.js';
 import api from './api/index.js';
-import createFakeData from './createFakeData.js';
+import jwtMiddleware from './lib/jwtMiddleware.js';
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ mongoose
 router.use('/api', api.routes());
 
 app.use(bodyParser());
+app.use(jwtMiddleware);
 
 app.use(router.routes()).use(router.allowedMethods());
 
